@@ -22,8 +22,16 @@ public class FindRepetedWord {
         System.err.println(list);
         Set<Character> dup = new HashSet<>();
         List<Character> collect = list.stream().filter(li -> !dup.add(li)).collect(Collectors.toList());
-        System.err.println("duplicate are "+collect);
+        System.err.println("duplicate are " + collect);
         return 0;
+    }
+
+
+    static long noOfTimesWordRepeated(String word, char ch) {
+
+        long count = word.chars().filter(c -> c == ch).count();
+        System.err.println(count);
+        return count;
     }
 
 
@@ -51,7 +59,7 @@ public class FindRepetedWord {
     }
 
     public static void main(String[] args) {
-        String word = "susheel";
+        String word = "susheelsss";
 //        int repetedFirst = findRepetedFirst(word);
 //        if (repetedFirst == -1) {
 //            System.err.println("no word found");
@@ -59,6 +67,8 @@ public class FindRepetedWord {
 //            System.err.println(word.charAt(repetedFirst));
 //        }
         findRepetedFirstFunctional(word);
+        char ch='s';
+        noOfTimesWordRepeated(word,ch);
     }
 
 
