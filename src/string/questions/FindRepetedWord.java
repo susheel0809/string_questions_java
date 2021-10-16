@@ -1,9 +1,6 @@
 package string.questions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -12,7 +9,7 @@ import java.util.stream.Collectors;
 public class FindRepetedWord {
 
 
-    static int findRepetedFirstFunctional(String word) {
+    static int findRepeatedFirstFunctional(String word) {
 
         //break String into array
         List<Character> list = new ArrayList<>();
@@ -23,6 +20,18 @@ public class FindRepetedWord {
         Set<Character> dup = new HashSet<>();
         List<Character> collect = list.stream().filter(li -> !dup.add(li)).collect(Collectors.toList());
         System.err.println("duplicate are " + collect);
+
+        word.toCharArray();
+        List<Character> arrayList = new ArrayList<>();
+
+        for (char c : word.toCharArray()) {
+            arrayList.add(c);
+        }
+        dup.clear();
+        List<Character> collect1 = arrayList.stream().filter(data -> !dup.add(data)).collect(Collectors.toList());
+        System.err.println(collect1+"collect1");
+
+
         return 0;
     }
 
@@ -35,7 +44,7 @@ public class FindRepetedWord {
     }
 
 
-    static int findRepetedFirst(String line) {
+    static int findRepeatedFirst(String line) {
 
         int p = -1, i, j;
 
@@ -66,7 +75,7 @@ public class FindRepetedWord {
 //        } else {
 //            System.err.println(word.charAt(repetedFirst));
 //        }
-        findRepetedFirstFunctional(word);
+        findRepeatedFirstFunctional(word);
         char ch='s';
         noOfTimesWordRepeated(word,ch);
     }
